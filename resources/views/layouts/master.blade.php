@@ -65,7 +65,7 @@
                                 <a href="{{route('features')}}" class="dropdown-item">Features</a>
                                 <a href="{{route('blog')}}" class="dropdown-item">Blog Article</a>
                                 <a href="{{route('testimonial')}}" class="dropdown-item">Testimonial</a>
-                                <a href="{{route('404')}}" class="dropdown-item">404 Page</a>
+                                {{-- <a href="{{route('404')}}" class="dropdown-item">404 Page</a> --}}
                             </div>
                         </div>
                         <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>

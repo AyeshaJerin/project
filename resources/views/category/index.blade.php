@@ -1,3 +1,9 @@
+@extends('layouts.back')
+@section('page_title',"Category Add")
+@section('content')
+
+
+
 <a href="{{route('category.create')}}">Add new</a>
 
 

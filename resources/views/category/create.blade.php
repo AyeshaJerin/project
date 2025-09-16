@@ -1,3 +1,9 @@
+@extends('layouts.back')
+@section('page_title',"Category Add")
+@section('content')
+
+
+
 <form action="{{route('category.store')}}"  method="post">
     @csrf
     <div>
@@ -17,3 +23,4 @@
         <button type="submit">Save</button>
     </div>
 </form>
+@endsection
