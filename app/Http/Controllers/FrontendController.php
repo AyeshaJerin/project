@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class front extends Controller
+class FrontendController extends Controller
 {
-    function welcome() {
-        return view ('welcome');
+    function home() {
+        $feature_product=\App\Models\Product::where('is_featured',1)->where('is_active',1)->get();
+        return view ('home',compact('feature_product'));
     }
 
     function about() {

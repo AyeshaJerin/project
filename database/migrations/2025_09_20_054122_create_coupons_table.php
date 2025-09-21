@@ -14,15 +14,14 @@ return new class extends Migration
         Schema::create('coupons', function (Blueprint $table) {
             $table->id();
              $table->string('code')->nullable();
-             $table->string('discount_type')->nullable();
-             $table->string('discount_value')->nullable();
-             $table->string('usage_limit')->nullable();
-             $table->string('used_count')->nullable();
-             $table->string('min_order_amount')->nullable();
-             $table->string('start_date')->nullable();
-             $table->string('end_date')->nullable();
-             $table->string('is_active')->nullable();
-
+             $table->integer('discount_type')->default(1)->comment('1=percentage, 2=fixed amount');
+             $table->decimal('discount_value',10,2)->nullable();
+             $table->integer('usage_limit')->nullable();
+             $table->integer('used_count')->nullable();
+             $table->decimal('min_order_amount',10,2)->nullable();
+             $table->date('start_date')->nullable();
+             $table->date('end_date')->nullable();
+             $table->integer('is_active')->default(0)->comment('0=inactive, 1=active');
             $table->timestamps();
         });
     }

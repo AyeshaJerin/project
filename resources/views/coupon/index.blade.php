@@ -33,14 +33,14 @@
                     <tr>
                         <td scope="row">{{ $loop->iteration }}</td>
                         <td>{{$d->code}}</td>
-                        <td>{{$d->discount_type}}</td>
+                        <td>{{$d->discount_type==1?"Percentage":"Fixed Amount"}}</td>
                         <td>{{$d->discount_value}}</td>
                         <td>{{$d->usage_limit}}</td>
                         <td>{{$d->used_count}}</td>
                         <td>{{$d->min_order_amount}}</td>
                         <td>{{$d->start_date}}</td>
                         <td>{{$d->end_date}}</td>
-                        <td>{{$d->is_active}}</td>
+                        <td>{{$d->is_active?"Active":"Inactive"}}</td>
 
                         <td>
                             <a href="{{route('coupon.edit',$d->id)}}">Update</a>

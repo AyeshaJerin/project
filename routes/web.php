@@ -8,8 +8,10 @@ use App\Http\Controllers\ProductTagController;
 use App\Http\Controllers\OrderController;
 use  App\Http\Controllers\CouponController;
 use App\Http\Controllers\OrderItemController;
-use  App\Http\Controllers\front;
+use  App\Http\Controllers\FrontendController as front;
 use  App\Http\Controllers\dashboard;
+use  App\Http\Controllers\CartController;
+use  App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,7 +74,7 @@ Route::get('jarin', function () {
 // })->name('404');
 
 
-Route::get('/',[front::class,'welcome'])->name ('welcome');
+Route::get('/',[front::class,'home'])->name ('home');
 Route::get('about',[front::class,'about'])->name ('about');
 Route::get('products',[front::class,'products'])->name ('products');
 Route::get('store',[front::class,'store'])->name ('store');
@@ -81,6 +83,13 @@ Route::get('page',[front::class,'page'])->name ('page');
 Route::get('features',[front::class,'features'])->name ('features');
 Route::get('blog',[front::class,'blog'])->name ('blog');
 Route::get('testimonial',[front::class,'testimonial'])->name ('testimonial');
+Route::get('cart',[CartController::class,'viewCart'])->name('cart.view');
+Route::post('cart/add',[CartController::class,'addToCart'])->name('cart.add');
+Route::post('cart/update',[CartController::class,'updateCart'])->name('cart.update');
+Route::get('cart/remove/{id}',[CartController::class,'removeFromCart'])->name('cart.remove');
+Route::post('cart/check_coupon',[CartController::class,'checkCoupon'])->name('cart.check_coupon');
+Route::get('checkout',[CheckoutController::class,'checkout'])->name('checkout');
+Route::post('checkout/place_order',[CheckoutController::class,'placeOrder'])->name('checkout.place_order');
 
 
 
@@ -104,7 +113,7 @@ Route::get('dashboard',[Dashboard::class,'index'])->name('dashboard');
 Route::get('dash',[Dashboard::class,'jerin'])->name ('dash');
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 });
 

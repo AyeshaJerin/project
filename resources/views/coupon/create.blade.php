@@ -20,7 +20,10 @@
            </div>
            <div class="form-group">
             <label for="discount_type">Discount Type</label>
-            <input type="text" name="discount_type"  class="form-control form-control-rounded" id="discount_type" >
+            <select name="discount_type"  class="form-control form-control-rounded" id="discount_type">
+                <option value="1">Percentage</option>
+                <option value="2">Fixed Amount</option>
+            </select>
            </div>
            <div class="form-group">
             <label for="discount_value">Discount Value</label>
@@ -35,12 +38,6 @@
 
 
            <div class="form-group">
-            <label for="used_count">Used Count</label>
-            <input type="text"  name="used_count"  class="form-control form-control-rounded" id="used_count">
-           </div>
-
-
-           <div class="form-group">
             <label for="min_order_amount">Min Order Amount</label>
             <input type="text"  name="min_order_amount"  class="form-control form-control-rounded" id="min_order_amount">
            </div>
@@ -48,19 +45,22 @@
 
            <div class="form-group">
             <label for="start_date">Start Date</label>
-            <input type="text"  name="start_date"  class="form-control form-control-rounded" id="start_date">
+            <input type="date"  name="start_date"  class="form-control form-control-rounded" id="start_date">
            </div>
 
 
            <div class="form-group">
             <label for="end_date">End Date</label>
-            <input type="text"  name="end_date"  class="form-control form-control-rounded" id="end_date">
+            <input type="date"  name="end_date"  class="form-control form-control-rounded" id="end_date">
            </div>
 
 
            <div class="form-group">
             <label for="is_active">Is Active</label>
-            <input type="text"  name="is_active"  class="form-control form-control-rounded" id="is_active">
+            <select name="is_active" id="is_active" class="form-control form-control-rounded">
+                <option value="0">Inactive</option>
+                <option value="1">Active</option>
+            </select>
            </div>
 
            <div class="form-group">
