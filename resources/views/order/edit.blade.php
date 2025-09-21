@@ -21,16 +21,16 @@
             <input type="text" name="total_price" id="total_price" value="{{ $order->total_price }}" class="form-control">
     </div>
 
-    <div>
+    <div class="form-group">
         <label>Discount Amount</label>
             <input type="text" name="discount_amount"  id="discount_amount" value="{{ $order->discount_amount }}" class="form-control">
     </div>
-        <div>
+        <div class="form-group">
             <label>Final Price</label>
             <input type="text" name="final_price" id="final_price" value="{{ $order->final_price }}" class="form-control">
         </div>
 
-        <div>
+        <div class="form-group">
             <label>Status</label>
             <input type="text" name="status" id="status" value="{{ $order->status }}" class="form-control">
         </div>

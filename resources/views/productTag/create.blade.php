@@ -24,13 +24,13 @@
                 <input type="text" name="tag_id" id="tag_id"  class="form-control form-control-rounded">
             </div>
 
-           <div class="form-group">
+          <div class="form-group">
             <button type="submit" class="btn btn-light btn-round px-5"> Save</button>
           </div>
           </form>
          </div>
-         </div>
-      </div>
+        </div>
+    </div>
 
 
 
