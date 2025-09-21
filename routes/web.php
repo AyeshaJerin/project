@@ -5,6 +5,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\ProductTagController;
+use App\Http\Controllers\OrderController;
+use  App\Http\Controllers\CouponController;
+use App\Http\Controllers\OrderItemController;
 use  App\Http\Controllers\front;
 use  App\Http\Controllers\dashboard;
 
@@ -27,9 +30,9 @@ Route::get('jarin', function () {
     return view('layouts/back');
 })->name('jarin');
 
-Route::get('dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::get('dashboard', function () {
+//     return view('auth/login');
+// })->name('dashboard');
 
 // Route::get('store', function () {
 //     return view('store');
@@ -83,25 +86,35 @@ Route::get('testimonial',[front::class,'testimonial'])->name ('testimonial');
 
 
 
-Route::get('dashboard',[dashboard::class,'jjj'])->name ('jjj');
+
 
 
 Route::resource('category', CategoryController::class);
 Route::resource('product', ProductController::class);
 Route::resource('tag', TagController::class);
 Route::resource('productTag', ProductTagController::class);
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('order', OrderController::class);
+Route::resource('coupon', CouponController::class);
+Route::resource('orderItem', OrderItemController::class);
 
 
 Route::middleware('auth:web')->group(function () {
-    
+
+Route::get('dashboard',[Dashboard::class,'index'])->name('dashboard');
+Route::get('dash',[Dashboard::class,'jerin'])->name ('dash');
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 });
+
+Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+

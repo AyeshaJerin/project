@@ -1,25 +1,39 @@
 
 
 
-<form action="{{route('category.update',$category->id)}}" method="post" class="update-form">
+<form action="{{route('order.update',$order->id)}}" method="post" class="update-form">
     @csrf
     @method('PATCH')
-    <h2>Update Category</h2>
+    <h2>Update Order</h2>
 
     <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" name="name" id="name" value="{{$category->name}}">
+       <label>User ID</label>
+            <input type="text" name="user_id" id="user_id" value="{{ $order->user_id }}" class="form-control">
     </div>
 
     <div class="form-group">
-        <label for="description">Description</label>
-        <input type="text" name="description" id="description" value="{{$category->description}}">
+        <label>Coupon ID</label>
+            <input type="text" name="coupon_id" id="coupon_id" value="{{ $order->coupon_id }}" class="form-control">
     </div>
 
     <div class="form-group">
-        <label for="created_by">Created By</label>
-        <input type="text" name="created_by" id="created_by" value="{{$category->created_by}}">
+       <label>Total Price</label>
+            <input type="text" name="total_price" id="total_price" value="{{ $order->total_price }}" class="form-control">
     </div>
+
+    <div>
+        <label>Discount Amount</label>
+            <input type="text" name="discount_amount"  id="discount_amount" value="{{ $order->discount_amount }}" class="form-control">
+    </div>
+        <div>
+            <label>Final Price</label>
+            <input type="text" name="final_price" id="final_price" value="{{ $order->final_price }}" class="form-control">
+        </div>
+
+        <div>
+            <label>Status</label>
+            <input type="text" name="status" id="status" value="{{ $order->status }}" class="form-control">
+        </div>
 
     <button type="submit">Update</button>
 </form>

@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 
 class dashboard extends Controller
 {
-    function jjj() {
-        return view ('jjj');
+    function index() {
+        return view ('dash');
+    }
+    function jerin() {
+        return view ('dash');
     }
 }

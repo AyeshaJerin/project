@@ -8,8 +8,10 @@
   <meta name="author" content=""/>
   <title>Dashtreme Admin - Free Dashboard for Bootstrap 4 by Codervent</title>
   <!-- loader-->
-  <link href="{{asset('bakend/assets/css/pace.min.css')}}" rel="stylesheet"/>
-  <script src="{{asset('bakend/assets/js/pace.min.js')}}"></script>
+  {{-- <link href="{{asset('bakend/assets/css/pace.min.css')}}" rel="stylesheet"/>
+  <script src="{{asset('bakend/assets/js/pace.min.js')}}"></script> --}}
+
+
   <!--favicon-->
   <link rel="icon" href="{{asset('bakend/assets/images/favicon.ico')}}" type="image/x-icon">
   <!-- Vector CSS -->
@@ -45,7 +47,7 @@
    <ul class="sidebar-menu do-nicescrol">
       <li class="sidebar-header">MAIN NAVIGATION</li>
       <li>
-        <a href="index.html">
+        <a href="{{route('dash')}}">
           <i class="zmdi zmdi-view-dashboard"></i> <span>Dashboard</span>
         </a>
       </li>
@@ -57,38 +59,38 @@
       </li>
 
       <li>
-        <a href="forms.html">
+        <a href="{{route('product.index')}}">
           <i class="zmdi zmdi-format-list-bulleted"></i> <span>Product</span>
         </a>
       </li>
 
       <li>
-        <a href="tables.html">
+        <a href="{{route('productTag.index')}}">
           <i class="zmdi zmdi-grid"></i> <span>Product Tag</span>
         </a>
       </li>
 
       <li>
-        <a href="calendar.html">
+        <a href="{{route('tag.index')}}">
           <i class="zmdi zmdi-calendar-check"></i> <span>Tag</span>
           <small class="badge float-right badge-light">New</small>
         </a>
       </li>
 
       <li>
-        <a href="profile.html">
+        <a href="{{route('coupon.index')}}">
           <i class="zmdi zmdi-face"></i> <span>Coupon</span>
         </a>
       </li>
 
       <li>
-        <a href="profile.html">
+        <a href="{{route('order.index')}}">
           <i class="zmdi zmdi-face"></i> <span>Order</span>
         </a>
       </li>
 
       <li>
-        <a href="profile.html">
+        <a href="{{route('orderItem.index')}}">
           <i class="zmdi zmdi-face"></i> <span>Order Item</span>
         </a>
       </li>
