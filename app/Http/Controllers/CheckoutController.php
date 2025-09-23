@@ -96,7 +96,7 @@ class CheckoutController extends Controller
 
         return redirect()->route('home')->with('success', 'Order placed successfully!');
         } catch (\Throwable $th) {
-            dd($th);
+           // dd($th);
             throw $th;
         }
     }
