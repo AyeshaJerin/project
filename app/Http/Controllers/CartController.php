@@ -12,7 +12,7 @@ class CartController extends Controller
     {
         $product = \App\Models\Product::find($request->product_id);
         if (!$product) {
-            return response()->json(['message' => $request->all()], 404);
+            return response()->json(['message' => "No product found."], 404);
         }
 
         $cart=session::get('cart', []);
@@ -44,11 +44,11 @@ class CartController extends Controller
             $cart[$product->id]['quantity']++;
         }
         session::put('cart', $cart);
-        if($cart[$product->id]['quantity'] <= 0) {
-            unset($cart[$product->id]);
-            session::put('cart', $cart);
-            return response()->json(['message' => 'Product removed from cart successfully']);
-        }
+        // if($cart[$product->id]['quantity'] <= 0) {
+        //     unset($cart[$product->id]);
+        //     session::put('cart', $cart);
+        //     return response()->json(['message' => 'Product removed from cart successfully']);
+        // }
 
         return response()->json(['message' => 'Product added to cart successfully']);
     }
@@ -88,7 +88,11 @@ class CartController extends Controller
                     ->first();
         if($check){
 
-            $discount=($total * $check->discount_value)/100;
+            if($check->discount_type==1)
+                $discount=($total * $check->discount_value)/100;
+            else
+                $discount=$check->discount_value;
+
             $total_after_discount=$total-$discount;
             session::put('coupon',[
                 'code'=>$check->code,

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Customer;
+use App\Models\Coupon;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -21,7 +23,8 @@ class OrderController extends Controller
      */
     public function create()
     {
-      return view('order.create');
+        $customer=Customer::get();
+        return view('order.create',compact('customer'));
     }
 
     /**
@@ -29,8 +32,8 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-         Order::create($request->all());
-       return redirect()->route('order.index');
+        Order::create($request->all());
+        return redirect()->route('order.index');
     }
 
     /**
@@ -38,7 +41,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        //
+        return view('order.show',compact('order'));
     }
 
     /**
@@ -46,7 +49,8 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-         return view('order.edit',compact('order'));
+        $customer=Customer::get();
+         return view('order.edit',compact('order','customer'));
     }
 
     /**

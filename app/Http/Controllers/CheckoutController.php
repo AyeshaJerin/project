@@ -70,6 +70,10 @@ class CheckoutController extends Controller
             $order->coupon_id=Session::get('coupon.coupon_id');
             $order->discount_amount=Session::get('coupon.discount_amount');
             $order->final_price=Session::get('coupon.total_after_discount');
+        }else{
+            $order->coupon_id=null;
+            $order->discount_amount=0;
+            $order->final_price=$order->total_price;
         }
         $order->notes=$request->notes;
         $order->division_id=$request->division_id;

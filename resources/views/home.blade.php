@@ -372,7 +372,6 @@
 @push('scripts')
     <script>
         function addToCart(productId) {
-            console.log("Adding product to cart: " + productId);
             // Implement the logic to add the product to the cart
             // You might want to make an AJAX request to your server here
             fetch("{{ route('cart.add') }}", {
@@ -385,11 +384,11 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log('Success:', data);
+                //console.log('Success:', data);
                 alert('Product added to cart!');
             })
             .catch((error) => {
-                console.error('Error:', error);
+                //console.error('Error:', error);
                 alert('Failed to add product to cart.');
             });
 

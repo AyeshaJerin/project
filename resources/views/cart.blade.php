@@ -44,13 +44,13 @@
                             @foreach($cart as $id=>$item)
                             <tr>
                                 <td>{{ $item['name'] }}</td>
-                                <td>${{ number_format($item['price'], 2) }}</td>
+                                <td>BDT{{ number_format($item['price'], 2) }}</td>
                                 <td>
                                     <button type="button" class="btn btn-secondary btn-sm" onclick="updateCart({{$id}},'decrease')">-</button>
                                         <input type="number" name="" id="" value="{{ $item['quantity'] }}" style="width: 40px; text-align: center;" readonly>
                                     <button type="button" class="btn btn-secondary btn-sm" onclick="updateCart({{$id}},'increase')">+</button>
                                 </td>
-                                <td>${{ number_format($item['price'] * $item['quantity'], 2) }}</td>
+                                <td>BDT{{ number_format($item['price'] * $item['quantity'], 2) }}</td>
                                 <td>
                                     <button type="button" class="btn btn-danger btn-sm" onclick="deleteItem({{$id}})">
                                         <i class="fa fa-trash"></i>
