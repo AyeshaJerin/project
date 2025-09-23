@@ -70,7 +70,12 @@
                                 {{-- <a href="{{route('404')}}" class="dropdown-item">404 Page</a> --}}
                             </div>
                         </div>
+
+                        <a href="{{route('cart.view')}}" class="nav-item nav-link">Cart</a>
+
                         <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
+
+                         <a href="{{route('checkout')}}" class="nav-item nav-link">Checkout</a>
                     </div>
                     <div class="border-start ps-4 d-none d-lg-block">
                         <button type="button" class="btn btn-sm p-0"><i class="fa fa-search"></i></button>
