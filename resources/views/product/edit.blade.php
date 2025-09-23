@@ -86,7 +86,7 @@ form button:hover {
 
 
 
-<form action="{{route('product.update',$product->id)}}"  method="post">
+<form action="{{route('product.update',$product->id)}}"  method="post" enctype="multipart/form-data">
     @csrf
     @method('PATCH')
     <div>
@@ -112,7 +112,7 @@ form button:hover {
     </div>
     <div>
         <label for="image">Image</label>
-        <input type="text" name="image" id="image" value="{{$product->image}}">
+        <input type="file" name="image" id="image" value="{{$product->image}}">
     </div>
     <div>
         <label for="is_featured">Is Featured</label>
