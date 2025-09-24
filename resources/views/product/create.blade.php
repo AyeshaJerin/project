@@ -187,7 +187,7 @@
 
             <div class="form-group">
             <label for="is_active">Is Active</label>
-                <select name="is_featured" id="is_featured"     class="form-control form-control-rounded">
+                <select name="is_active" id="is_active" class="form-control form-control-rounded">
                     <option value="0">No</option>
                     <option value="1">Yes</option>
                 </select>

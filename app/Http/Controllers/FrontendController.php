@@ -20,7 +20,8 @@ class FrontendController extends Controller
     }
 
     function store() {
-        return view ('store');
+        $feature_product=\App\Models\Product::where('is_featured',1)->where('is_active',1)->get();
+        return view ('store',compact('feature_product'));
     }
 
     function contact() {
