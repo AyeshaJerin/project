@@ -1,3 +1,22 @@
+<style>
+.store-item {
+    background-color: #e4d0b7; /* light coffee shade */
+    border-radius: 12px;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.store-item:hover {
+    background-color: #b19565; /* slightly darker coffee on hover */
+    transform: translateY(-5px);
+}
+</style>
+
+
+
+
+
+
 @extends('layouts.master')
 
 @section('content')
