@@ -28,9 +28,9 @@ use  App\Http\Controllers\CheckoutController;
 //     return view('welcome');
 // })->name('welcome');
 
-Route::get('jarin', function () {
-    return view('layouts/back');
-})->name('jarin');
+// Route::get('jarin', function () {
+//     return view('layouts/back');
+// })->name('jarin');
 
 // Route::get('dashboard', function () {
 //     return view('auth/login');
@@ -98,6 +98,21 @@ Route::post('checkout/place_order',[CheckoutController::class,'placeOrder'])->na
 
 
 
+// Route::resource('category', CategoryController::class);
+// Route::resource('product', ProductController::class);
+// Route::resource('tag', TagController::class);
+// Route::resource('productTag', ProductTagController::class);
+// Route::resource('order', OrderController::class);
+// Route::resource('coupon', CouponController::class);
+// Route::resource('orderItem', OrderItemController::class);
+
+
+Route::middleware('auth:web')->group(function () {
+
+Route::get('dashboard',[Dashboard::class,'index'])->name('dashboard');
+Route::get('dash',[Dashboard::class,'index'])->name ('dash');
+
+
 Route::resource('category', CategoryController::class);
 Route::resource('product', ProductController::class);
 Route::resource('tag', TagController::class);
@@ -105,13 +120,6 @@ Route::resource('productTag', ProductTagController::class);
 Route::resource('order', OrderController::class);
 Route::resource('coupon', CouponController::class);
 Route::resource('orderItem', OrderItemController::class);
-
-
-Route::middleware('auth:web')->group(function () {
-
-Route::get('dashboard',[Dashboard::class,'index'])->name('dashboard');
-Route::get('dash',[Dashboard::class,'jerin'])->name ('dash');
-
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

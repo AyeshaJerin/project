@@ -34,7 +34,7 @@
                         <td>
                             <a href="{{route('order.show',$d->id)}}">
                                 Invoice
-                            </a>
+                            </a><br>
                             <a href="{{route('order.edit',$d->id)}}">Update</a>
 
                             <form method="post" action="{{route('order.destroy',$d->id)}}">

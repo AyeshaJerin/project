@@ -2,15 +2,15 @@
 
 
 
-{{-- <style>
+<style>
     body {
         font-family: 'Poppins', sans-serif;
-        background: #f4f6f9;
+        background: #457dd1;
         margin: 20px;
     }
 
     .card {
-        background: #fff;
+        background: #2dc812;
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         padding: 25px;
@@ -19,7 +19,7 @@
     h2 {
         text-align: center;
         margin-bottom: 20px;
-        color: #2c3e50;
+        color: #0f57a0;
         font-size: 24px;
         font-weight: bold;
     }
@@ -37,18 +37,18 @@
     }
 
     table th {
-        background: #46b8d5;
+        background: #286a97;
         color: #fefefe;
         text-align: left;
     }
 
     table td {
-        background: #c92020;
+        background: #286a97;
     }
 
     .table thead th {
         background: #2980b9;
-        color: #fff;
+        color: #ffffff;
         text-align: center;
     }
 
@@ -57,7 +57,7 @@
     }
 
     .table tfoot th {
-        background: #ecf0f1;
+        background:  #2980b9;;
         text-align: right;
         font-weight: bold;
         font-size: 15px;
@@ -90,7 +90,7 @@
         background: #e74c3c;
         color: #fff;
     }
-</style> --}}
+</style>
 
 
 @extends('layouts.back')

@@ -9,7 +9,7 @@ class dashboard extends Controller
     function index() {
         return view ('dash');
     }
-    function jerin() {
-        return view ('dash');
-    }
+    // function jerin() {
+    //     return view ('dash');
+    // }
 }
